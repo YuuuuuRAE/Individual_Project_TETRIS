@@ -2,35 +2,35 @@
 https://en.wikipedia.org/wiki/Tetromino
 Enum is based on link
 
-I : Staright tetrimino [][][][]
+I : Staright tetromino [][][][]
 
-O : Square tetrimino [][]
+O : Square tetromino [][]
                      [][]
 
-T : T tetrimino [][][]
+T : T tetromino [][][]
                   []
 
 
-L : L tetrimino   []
+L : L tetromino   []
                   []
                   [][]
 
-J :  reversal L tetrimino   []
+J :  reversal L tetromino   []
                             []
                             [][]
 
 
-S : skew tetrimino    [][]
+S : skew tetromino    [][]
                     [][]
 
-Z : reversal skew tetrimono [][]
+Z : reversal skew tetromino [][]
                               [][]
 
 */
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public enum Tetrimino
+public enum Tetromino
 {
     I,
     O,
@@ -42,9 +42,14 @@ public enum Tetrimino
 }
 
 [System.Serializable]
-public struct TetriminoData
+public struct TetrominoData
 {
-    public Tetrimino tetrimino;
+    public Tetromino tetromino;
     public Tile tile;
-    public Vector2Int[] cells;
+    public Vector2Int[] cells { get; private set;}
+
+    public void Initialize()
+    {
+        this.cells = Data.Cells[this.tetromino];
+    }
 }
