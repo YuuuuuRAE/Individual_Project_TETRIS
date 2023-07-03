@@ -5,18 +5,8 @@ public static class Data
 {
     public static readonly float cos = Mathf.Cos(Mathf.PI / 2f);
     public static readonly float sin = Mathf.Sin(Mathf.PI / 2f);
-    public static readonly float[] RotationMatrix = new float[] {cos, sin, -sin, cos};
+    public static readonly float[] RotationMatrix = new float[] { cos, sin, -sin, cos };
 
-    /*
-    <Tetrominoes>
-    I,
-    O,
-    T,
-    L,
-    J,
-    S,
-    Z
-     */
     public static readonly Dictionary<Tetromino, Vector2Int[]> Cells = new Dictionary<Tetromino, Vector2Int[]>()
     {
         { Tetromino.I, new Vector2Int[] { new Vector2Int(-1, 1), new Vector2Int( 0, 1), new Vector2Int( 1, 1), new Vector2Int( 2, 1) } },
@@ -60,4 +50,5 @@ public static class Data
         { Tetromino.T, WallKicksJLOSTZ },
         { Tetromino.Z, WallKicksJLOSTZ },
     };
+
 }

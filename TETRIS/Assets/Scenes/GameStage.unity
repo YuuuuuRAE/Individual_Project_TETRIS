@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 638269414}
   - component: {fileID: 638269413}
   - component: {fileID: 638269415}
+  - component: {fileID: 638269416}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -385,28 +386,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b321a43d126a53742bb289f6280dfc53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tetriminoes:
-  - tetrimino: 0
-    tile: {fileID: 11400000, guid: adb987d13cb66ea469143c4884bc7040, type: 2}
-    cells: []
-  - tetrimino: 1
-    tile: {fileID: 11400000, guid: 5dc0f29bcb7e5604c86be1fc14fcc206, type: 2}
-    cells: []
-  - tetrimino: 2
-    tile: {fileID: 11400000, guid: c792bac38be43794b97b86f9dc8e2a93, type: 2}
-    cells: []
-  - tetrimino: 3
-    tile: {fileID: 11400000, guid: 52367fa63f2516c4c98edfaa33f171dc, type: 2}
-    cells: []
-  - tetrimino: 4
-    tile: {fileID: 11400000, guid: d09f695041b11e54a9b48540d60ca147, type: 2}
-    cells: []
-  - tetrimino: 5
-    tile: {fileID: 11400000, guid: f61ad45b28ac2134b9186af5b1fac524, type: 2}
-    cells: []
-  - tetrimino: 6
-    tile: {fileID: 11400000, guid: 77b26650b4b0fc14db1de6e5a6c8ec55, type: 2}
-    cells: []
+  tetrominoes:
+  - tile: {fileID: 11400000, guid: adb987d13cb66ea469143c4884bc7040, type: 2}
+    tetromino: 0
+  - tile: {fileID: 11400000, guid: 52367fa63f2516c4c98edfaa33f171dc, type: 2}
+    tetromino: 1
+  - tile: {fileID: 11400000, guid: d09f695041b11e54a9b48540d60ca147, type: 2}
+    tetromino: 2
+  - tile: {fileID: 11400000, guid: 5dc0f29bcb7e5604c86be1fc14fcc206, type: 2}
+    tetromino: 3
+  - tile: {fileID: 11400000, guid: f61ad45b28ac2134b9186af5b1fac524, type: 2}
+    tetromino: 4
+  - tile: {fileID: 11400000, guid: c792bac38be43794b97b86f9dc8e2a93, type: 2}
+    tetromino: 5
+  - tile: {fileID: 11400000, guid: 77b26650b4b0fc14db1de6e5a6c8ec55, type: 2}
+    tetromino: 6
+  boardSize: {x: 10, y: 20}
+  spawnPosition: {x: 0, y: 8, z: 0}
+--- !u!114 &638269416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638269412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34f6d490a251bf43b7299044676b00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepDelay: 1
+  moveDelay: 0.1
+  lockDelay: 0.5
 --- !u!1 &1171906537
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171906539}
   - component: {fileID: 1171906538}
+  - component: {fileID: 1171906540}
   m_Layer: 0
   m_Name: GhostGrid
   m_TagString: Untagged
@@ -452,6 +464,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171906540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171906537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a46249f974c0764daecc286a20d2e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: ab0496baab168404c9dd11e8b4fe3ba7, type: 2}
+  mainBoard: {fileID: 638269415}
+  trackingPiece: {fileID: 638269416}
 --- !u!1 &1354162079
 GameObject:
   m_ObjectHideFlags: 0
